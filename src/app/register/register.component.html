@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="app.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" class="container" style="width:600px">
+        <h3><b>Register <span></span></b></h3>
+                <form role="form" class="well" #userPost = "ngForm" [formGroup]="registerForm"  (ngSubmit) = "onClickSubmit(userPost)" novalidate>
+                    <div class="form-group">
+                      <label for="email"> Email:  </label>
+                      <input type="email" id="email" class="form-control" formControlName="email" placeholder="Enter Email" email>
+                    </div>
+                    <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert alert-danger">
+                      <div *ngIf="registerForm.controls['email'].errors?.['required']">
+                      Email is required.
+                    </div>
+                    <div *ngIf="registerForm.controls['email'].errors?.['email']">
+                      Email address format is invalid.
+                    </div>
+                  </div>
+                  <h4></h4>
+                    <div class="form-group">
+                      <label for="password"> Password:  </label>
+                      <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter Password">
+                      <input type="checkbox" (change)="showPassword()"> Show Password
+                    </div>
+                    <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert alert-danger">
+                      <div *ngIf="registerForm.controls['password'].errors?.['required']">
+                      Password is required.
+                    </div>
+                  </div>
+                    <br>
+                        <input type="submit" class="btn btn-primary" value="Submit" [disabled]="registerForm.pristine || registerForm.invalid">
+                </form>
+                <!-- <p>Form value: {{ registerForm.value | json }}</p>
+                <p>Form status: {{ registerForm.status | json }}</p> -->
+    </div>
+</body>
+</html>

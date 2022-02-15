@@ -1,0 +1,34 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "email": "ghita@yahoo.com",
+      "password": "asd123"
+    },
+    {
+      "id": 2,
+      "email": "andrei@yahoo.com",
+      "password": "qwe456"
+    },
+    {
+      "email": "gheorghe@yahoo.com",
+      "password": "ole123",
+      "id": 3
+    },
+    {
+      "email": "aaa@yahoo.com",
+      "password": "aa",
+      "id": 4
+    },
+    {
+      "email": "ghita@yahoo.com",
+      "password": "aa",
+      "id": 5
+    },
+    {
+      "email": "gheorghe123@yahoo.com",
+      "password": "aa",
+      "id": 6
+    }
+  ]
+}
