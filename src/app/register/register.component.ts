@@ -108,11 +108,6 @@ export class RegisterComponent implements OnInit {
       this.eraseAlreadyMessage();
       this.registerForm.reset();
       this.emailOk = false;
-    //   this.registerForm = new FormGroup({
-    //   "email":new FormControl(null),
-    //   "password":new FormControl(null)
-    // });
-    // this.createForm();
     }),
     (error) => {
       console.log(error);
@@ -122,7 +117,6 @@ export class RegisterComponent implements OnInit {
     this.emailOk = false;
   }
 
-  
   onClickSubmit(data:any) {
     this.eraseValidationMessage();
     console.log(this.registerForm.value.email);
